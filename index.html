@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIFEINVADER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <header class="header">
+            <h1>Main Menu</h1>
+            <div class="alert-banner">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Welcome To Our Mods Dont Share This Panel Without Permission</span>
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+        </header>
+
+        <nav class="top-bar">
+            <button class="tab-button active" onclick="showTab('car-trade')">Car Ads</button>
+            <button class="tab-button" onclick="showTab('house-ads')">House Ads</button>
+            <button class="tab-button clothing-button">
+                <a href="clothin-html.html">Clothing Ads</a>
+            </button>
+            <button class="tab-button items-button">
+                <a href="items.html">Items Ads</a>
+            </button>
+        </nav>
+
+        <div id="car-trade" class="tab-content active">
+            <section class="tab-section">
+                <h2>Car Ads Creator</h2>
+
+                <div class="form-group">
+                    <label for="car-name">Enter Car Name:</label>
+                    <input type="text" id="car-name" class="form-control" autocomplete="off">
+                    <div id="car-suggestions" class="suggestion-box"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Transaction Type:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="transaction" value="Buying" checked> Buying</label>
+                        <label><input type="radio" name="transaction" value="Selling"> Selling</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Trading Option:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" id="trading"> Trading</label>
+                    </div>
+                </div>
+
+                <div class="form-group" id="trading-car-group" style="display: none;">
+                    <label for="trading-car">Trading For Car Name:</label>
+                    <input type="text" id="trading-car" class="form-control" autocomplete="off">
+                    <div id="trading-car-suggestions" class="suggestion-box"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Configuration Type:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" id="full-config"> Full</label>
+                        <label><input type="checkbox" id="partial-config"> Partial</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Extras:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" id="visual"> Visual Upgrades</label>
+                        <label><input type="checkbox" id="insurance"> Insurance</label>
+                        <label><input type="checkbox" id="tuning"> Tuning Parts</label>
+                        <label><input type="checkbox" id="turbo"> Turbo Kit</label>
+                        <label><input type="checkbox" id="drift"> Drift Kit</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Enter Price/Budget:</label>
+                    <input type="text" id="budget" class="form-control" autocomplete="off">
+                </div>
+
+                <div class="button-group">
+                    <button id="car-submit-btn" class="btn btn-primary">Submit</button>
+                    <button id="car-copy-btn" class="btn btn-secondary">Copy</button>
+                </div>
+
+                <div class="form-group">
+                    <label>Output:</label>
+                    <div id="car-output" class="output-box"></div>
+                </div>
+            </section>
+        </div>
+
+        <div id="house-ads" class="tab-content">
+            <section class="tab-section">
+                <h2>House Ads Creator</h2>
+
+                <div class="form-group">
+                    <label for="house-number">House Number (Optional):</label>
+                    <input type="text" id="house-number" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label><input type="checkbox" id="apartment"> Apartment</label>
+                </div>
+
+                <div class="form-group" id="apartment-number-group" style="display: none;">
+                    <label for="apartment-number">Apartment No. (Optional):</label>
+                    <input type="text" id="apartment-number" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Transaction Type:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="house-transaction" value="Selling" checked> Selling</label>
+                        <label><input type="radio" name="house-transaction" value="Buying"> Buying</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Garage Space (Optional):</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" id="garage-2"> 2 g.s.</label>
+                        <label><input type="checkbox" id="garage-5"> 5 g.s.</label>
+                        <label><input type="checkbox" id="garage-9"> 9 g.s.</label>
+                        <label><input type="checkbox" id="garage-25"> 25 g.s.</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Warehouse Space (Optional):</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" id="warehouse-3"> 3 w.h.</label>
+                        <label><input type="checkbox" id="warehouse-4"> 4 w.h.</label>
+                        <label><input type="checkbox" id="warehouse-5"> 5 w.h.</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Features (Optional):</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" id="garden"> Garden</label>
+                        <label><input type="checkbox" id="custom-interior"> Custom Interior</label>
+                        <label><input type="checkbox" id="house-insurance"> Insurance</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Others (Optional):</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" id="helipad"> Helipad</label>
+                        <label><input type="checkbox" id="tennis-court"> Tennis Court</label>
+                        <label><input type="checkbox" id="driveway"> Long Driveway</label>
+                        <label><input type="checkbox" id="swimming-pool"> Swimming Pool</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="view">View (Optional):</label>
+                    <select id="view" class="form-control">
+                        <option value="">Select view</option>
+                        <option value="a nice view">Nice view</option>
+                        <option value="a beautiful view">Beautiful view</option>
+                        <option value="a great view">Great view</option>
+                        <option value="a good view">Good view</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location (Optional):</label>
+                    <input type="text" id="location" class="form-control" autocomplete="off">
+                    <div id="location-suggestions" class="suggestion-box"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="house-price">Price/Budget (Optional):</label>
+                    <input type="text" id="house-price" class="form-control" autocomplete="off">
+                </div>
+
+                <div class="button-group">
+                    <button id="house-submit-btn" class="btn btn-primary">Generate Ad</button>
+                    <button id="house-copy-btn" class="btn btn-secondary">Copy</button>
+                </div>
+
+                <div class="form-group">
+                    <label>Output:</label>
+                    <div id="house-output" class="output-box"></div>
+                </div>
+            </section>
+        </div>
+
+        <div id="notification" class="notification">Copied to clipboard!</div>
+
+        <div id="errorPopup" class="error-popup">
+            <div class="popup-content">
+                <i class="fas fa-ban"></i>
+                <p>You are not permitted to access this page.</p>
+                <button id="errorOkButton" class="popup-button">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="info-card">
+            <div class="info-card__icon"></div>
+            <div class="info-card__text">
+                <a class="discord-link" href="https://discord.gg/4pngyW7nHj">
+                    If you found any bugs report me
+                    <i class="fas fa-hand-pointer"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/carAds.js"></script>
+    <script src="js/houseAds.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
